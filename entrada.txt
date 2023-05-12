@@ -1,0 +1,10 @@
+q0 q1 q2
+q0
+q2
+a b λ x
+λ x
+q0 a λ x q1
+q1 b x λ q2
+q2 a λ x q1
+abababab
+aabb
