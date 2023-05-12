@@ -7,4 +7,4 @@ q0 a λ x q1
 q1 b x λ q2
 q2 a λ x q1
 abababab
-aabb
+aabba
