@@ -1,8 +1,8 @@
-def executa_automato(estados, estado_inicial, estadosFinais, alfabeto, alfabeto_pilha, regras, cadeia):
+def executaautomato(estados, estadoInicial, estadosFinais, alfabeto, alfabeto_pilha, regras, cadeia):
 
     pilha = ["λ"]
 
-    estadoAtual = estado_inicial
+    estadoAtual = estadoInicial
     posicaoCadeia = 0
 
     while posicaoCadeia < len(cadeia):
@@ -37,7 +37,7 @@ with open(nomeArquivo, 'r', encoding='utf-8') as arquivo:
     conteudo = [linha.strip() for linha in arquivo.readlines()]
 
     estados = conteudo[0].split()
-    estado_inicial = conteudo[1]
+    estadoInicial = conteudo[1]
     estadosFinais = conteudo[2].split()
     alfabeto = conteudo[3].split()
     alfabeto_pilha = conteudo[4].split()
@@ -54,9 +54,9 @@ with open(nomeArquivo, 'r', encoding='utf-8') as arquivo:
             regras[estadoAtual][substituicao] = {}
         regras[estadoAtual][substituicao][simboloTopoPilhaoriginal] = (substituicaoresultante, estado_destino)
 
-cadeias_teste = conteudo[-2:]
-for cadeia in cadeias_teste:
-    if executa_automato(estados, estado_inicial, estadosFinais, alfabeto, alfabeto_pilha, regras, cadeia):
+cadeiasTeste = conteudo[-2:]
+for cadeia in cadeiasTeste:
+    if executaautomato(estados, estadoInicial, estadosFinais, alfabeto, alfabeto_pilha, regras, cadeia):
         print("Aceita a cadeia:", cadeia)
     else:
         print("Rejeita a cadeia:", cadeia)
