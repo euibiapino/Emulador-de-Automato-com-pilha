@@ -1,4 +1,4 @@
-def executaautomato(estados, estadoInicial, estadosFinais, alfabeto, alfabeto_pilha, regras, cadeia):
+def executaautomato(estados, estadoInicial, estadosFinais, alfabeto, alfabetopilha, regras, cadeia):
 
     pilha = ["λ"]
 
@@ -9,7 +9,7 @@ def executaautomato(estados, estadoInicial, estadosFinais, alfabeto, alfabeto_pi
         simboloLido = cadeia[posicaoCadeia]
         simboloTopoPilha = pilha[-1]
 
-        if simboloLido not in alfabeto or simboloTopoPilha not in alfabeto_pilha:
+        if simboloLido not in alfabeto or simboloTopoPilha not in alfabetopilha:
             return False
 
         if estadoAtual not in regras or simboloLido not in regras[estadoAtual] or simboloTopoPilha not in regras[estadoAtual][simboloLido]:
